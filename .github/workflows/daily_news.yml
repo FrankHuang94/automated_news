@@ -25,7 +25,7 @@ jobs:
 
       - name: Run script
         env:
-          SENDER_EMAIL: ${{ secrets.huangzhizhong100@gmail.com }}
-          SENDER_PASSWORD: ${{ secrets.kruw xyah jgxc gajt }}
-          RECEIVER_EMAIL: ${{ secrets.huangzhizhong100@gmail.com }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: python semiconductor_news.py
