@@ -1,0 +1,31 @@
+name: Daily Semiconductor News
+
+on:
+  schedule:
+    # Runs at 16:00 UTC (8:00 AM PST / 11:00 AM EST)
+    - cron: '0 16 * * *'
+  workflow_dispatch: # Allows you to click "Run Now" to test it
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install libraries
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          SENDER_EMAIL: ${{ secrets.huangzhizhong100@gmail.com }}
+          SENDER_PASSWORD: ${{ secrets.kruw xyah jgxc gajt }}
+          RECEIVER_EMAIL: ${{ secrets.huangzhizhong100@gmail.com }}
+        run: python semiconductor_news.py
